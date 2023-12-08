@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Sorteo Navi CAID</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Confeti-->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">Navi CAID 2023</h1>
+            <h2 class="mb-3"><em>Sorteo de premios</em></h2>
+            <button class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#ganadorModal" id="obtenerGanador">Obtener un ganador</button>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ganadorModal" tabindex="-1" aria-labelledby="ganadorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ganadorModalLabel">¡Felicidades!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="nombreGanador">El ganador es: [Nombre del Ganador]</h3>
+                    <!-- Puedes personalizar esta sección con la información del ganador -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!--Sorteo JS-->
+    <script src="js/sorteo.js"></script>
+    <!-- Confeti JS -->
+    <script>
+        // Función para lanzar confeti
+       // Función para lanzar confeti
+        function lanzarConfeti() {
+            confetti();
+        }
+
+        // Obtener referencia al elemento del modal
+        var ganadorModal = document.getElementById('ganadorModal');
+
+        // Evento que se dispara cuando se muestra el modal
+        ganadorModal.addEventListener('shown.bs.modal', function () {
+            lanzarConfeti();
+        });
+
+    </script>
+</body>
+
+</html>
